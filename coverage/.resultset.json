@@ -217,16 +217,50 @@
         1,
         null,
         1,
+        1,
         null
       ],
       "/Users/felix/workspace/to_do_list/app/helpers/application_helper.rb": [
         1,
         null
       ],
+      "/Users/felix/workspace/to_do_list/spec/features/user_visit_root_path_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/felix/workspace/to_do_list/app/models/task_list.rb": [
+        1,
+        null
+      ],
+      "/Users/felix/workspace/to_do_list/app/models/application_record.rb": [
+        1,
+        1,
+        null
+      ],
       "/Users/felix/workspace/to_do_list/app/controllers/home_controller.rb": [
         1,
         1,
-        2,
+        3,
         null,
         null
       ],
@@ -238,12 +272,14 @@
         1,
         null
       ],
-      "/Users/felix/workspace/to_do_list/app/models/application_record.rb": [
+      "/Users/felix/workspace/to_do_list/app/controllers/task_list_controller.rb": [
         1,
         1,
+        1,
+        null,
         null
       ]
     },
-    "timestamp": 1523644825
+    "timestamp": 1523650701
   }
 }

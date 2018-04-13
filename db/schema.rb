@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_04_13_181223) do
+ActiveRecord::Schema.define(version: 2018_04_13_192244) do
 
   create_table "public_tasks", force: :cascade do |t|
     t.string "task_description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "task_lists", force: :cascade do |t|
+    t.string "title"
+    t.boolean "public"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
