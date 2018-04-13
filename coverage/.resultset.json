@@ -226,6 +226,7 @@
       "/Users/felix/workspace/to_do_list/app/controllers/home_controller.rb": [
         1,
         1,
+        2,
         null,
         null
       ],
@@ -233,7 +234,7 @@
         1,
         null
       ],
-      "/Users/felix/workspace/to_do_list/app/models/public_task.rb": [
+      "/Users/felix/workspace/to_do_list/app/models/task.rb": [
         1,
         null
       ],
@@ -241,15 +242,8 @@
         1,
         1,
         null
-      ],
-      "/Users/felix/workspace/to_do_list/app/controllers/public_task_controller.rb": [
-        1,
-        1,
-        1,
-        null,
-        null
       ]
     },
-    "timestamp": 1523590687
+    "timestamp": 1523644506
   }
 }

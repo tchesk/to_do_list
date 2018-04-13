@@ -1,4 +1,10 @@
 <h1> To do list </h1>
 <p> Bem-vindo ao maior lista de tarefas online </p>
 
-<%= link_to 'lista pública' %>
+<h3> Tarefas </h3>
+<ul>
+  <% @task.each do |task| %>
+    <li><%= task.title %></li>
+    <li><%= task.description %></li>
+  <% end %>
+</ul>

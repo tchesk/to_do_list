@@ -8,14 +8,15 @@ feature 'user visit home page' do
     expect(page).to have_css('p', text: 'Bem-vindo ao maior lista de tarefas online')
   end
   scenario 'and view a public list' do
-    list = PublicTask.create(task_description: 'regar as plantas da horta')
-    list_1 = PublicTask.create(task_description: 'colheita de frutas maduras')
+    list = Task.create(title: 'regar as plantas',description:'horta comunitária')
+    list_1 = Task.create(title: 'colheita de fruta', description:'somente maduras')
 
     visit root_path
-    visit public_task_index_path
 
-    expect(page).to have_css('h1', text: 'Lista de tarefas pública')
-    expect(page).to have_css('li', text: list.task_description)
-    expect(page).to have_css('li', text: list_1.task_description)
+    expect(page).to have_css('h3', text: 'Tarefas')
+    expect(page).to have_css('li', text: list.title)
+    expect(page).to have_css('li', text: list.description)
+    expect(page).to have_css('li', text: list_1.title)
+    expect(page).to have_css('li', text: list_1.description)
   end
 end
