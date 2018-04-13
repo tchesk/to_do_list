@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_04_13_192244) do
+ActiveRecord::Schema.define(version: 2018_04_13_221650) do
 
   create_table "public_tasks", force: :cascade do |t|
     t.string "task_description"
@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(version: 2018_04_13_192244) do
     t.integer "type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "task_list_id"
+    t.index ["task_list_id"], name: "index_tasks_on_task_list_id"
   end
 
 end
