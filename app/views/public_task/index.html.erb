@@ -1,0 +1,6 @@
+<h1> Lista de tarefas pública </h1>
+<ul>
+<% @pub_tasks.each do |t| %>
+  <li><%= t.task_description %></li>
+<% end %>
+</ul>

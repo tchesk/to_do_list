@@ -1,0 +1,2 @@
+class PublicTask < ApplicationRecord
+end
