@@ -1,9 +1,15 @@
-<h1> Lista de tarefas </h1>
-<ul>
-  <% @lists.each do |list| %>
-    <li><%= list.title %></li>
-  <% end %>
-</ul>
+<h1> Tarefas </h1>
+<% @lists.each do |list| %>
+    <% if list.public_list %>
+        <h3><%= list.title %></h3>
+      <% @list.tasks.each do |task| %>
+        <h4><%= task.title %></h4>
+        <ul>
+            <li><%= task.description %></li>
+        </ul>
+      <% end %>
+    <% end %>
+<% end %>
 
 <% @lists.each do |list| %>
   <%= link_to list.title, task_list_path(list.id) %>

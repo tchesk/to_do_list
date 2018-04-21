@@ -8,7 +8,7 @@ feature 'user visit home page' do
     expect(page).to have_css('p', text: 'Bem-vindo ao maior lista de tarefas online')
   end
   scenario 'and view a public list' do
-    task_list = TaskList.create(title:'Cuidar da horta', public: true)
+    task_list = TaskList.create(title:'Cuidar da horta', public_list: true)
     list = Task.create(title: 'regar as plantas',
                        description:'horta comunitária', task_list: task_list
     )

@@ -224,6 +224,29 @@
         1,
         null
       ],
+      "/Users/felix/workspace/to_do_list/spec/features/user_create_multiple_tasks_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
       "/Users/felix/workspace/to_do_list/spec/features/user_create_task_list_spec.rb": [
         1,
         null,
@@ -288,7 +311,8 @@
       "/Users/felix/workspace/to_do_list/app/controllers/task_list_controller.rb": [
         1,
         1,
-        2,
+        3,
+        3,
         null,
         1,
         1,
@@ -307,6 +331,6 @@
         null
       ]
     },
-    "timestamp": 1523661360
+    "timestamp": 1524346232
   }
 }
