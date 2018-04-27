@@ -2,6 +2,8 @@ require 'rails_helper'
 
 feature 'user create a task list' do
   scenario 'and access a specific task' do
+    user = User.create(email:'pedro@autoseg.com', password:'123456')
+
     task_list = TaskList.create(title:'Cuidar da horta', public_list: true)
     task_list_1 = TaskList.create(title:'Treinar futvolei', public_list: false)
 
@@ -12,11 +14,15 @@ feature 'user create a task list' do
                          description:'correr em volta da quadra'
     )
 
-    visit task_list_index_path
-    click_on task_list.title
+    visit root_path
+    click_on 'log in'
+    fill_in 'Email', with:'pedro@autoseg.com'
+    fill_in 'Senha', with: '123456'
+    click_on 'Entrar'
+
+    visit task_lists_path
 
     expect(page).to have_css('h3', text: task_list.title)
-    expect(page).to have_css('h5', text: task.title)
-    expect(page).to have_css('p', text: task.description)
+
   end
 end

@@ -1,13 +1,24 @@
 require 'rails_helper'
 
 feature 'user visit home page' do
-  scenario 'successfuly' do
+  scenario 'and log in' do
+    user = User.create(email:'pedro@autoseg.com', password:'123456')
+
     visit root_path
 
-    expect(page).to have_css('h1', text: 'To do list')
+    click_on 'Sign up'
+    click_on 'Log in'
+
+    fill_in 'Email', with:'pedro@autoseg.com'
+    fill_in 'Senha', with: '123456'
+    click_on 'Entrar'
+
+    expect(page).to have_css('h1', text: 'Lista de Tarefas')
     expect(page).to have_css('p', text: 'Bem-vindo ao maior lista de tarefas online')
   end
+
   scenario 'and view a public list' do
+    user = User.create(email:'pedro@autoseg.com', password:'123456')
     task_list = TaskList.create(title:'Cuidar da horta', public_list: true)
     list = Task.create(title: 'regar as plantas',
                        description:'horta comunitária', task_list: task_list
@@ -18,10 +29,13 @@ feature 'user visit home page' do
 
     visit root_path
 
-    expect(page).to have_css('h3', text: 'Tarefas')
-    expect(page).to have_css('li', text: list.title)
-    expect(page).to have_css('li', text: list.description)
-    expect(page).to have_css('li', text: list_1.title)
-    expect(page).to have_css('li', text: list_1.description)
+    click_on 'Sign up'
+    click_on 'Log in'
+
+    fill_in 'Email', with:'pedro@autoseg.com'
+    fill_in 'Senha', with: '123456'
+    click_on 'Entrar'
+
+    expect(page).to have_css('li', text: task_list.title)
   end
 end

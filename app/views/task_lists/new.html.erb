@@ -1,0 +1,13 @@
+<%= form_for(@lists) do |list| %>
+  <div>
+  <%= list.label :title, 'Título' %>
+  <%= list.text_field :title %>
+  </div>
+  <div>
+    <%= list.label :public_list, 'Lista Pública' %>
+    <%= list.select(:public_list, options_for_select([['Sim', true], ['Não', false]])) %>
+  </div>
+  <div>
+    <%= list.submit 'Enviar' %>
+  </div>
+<% end %>

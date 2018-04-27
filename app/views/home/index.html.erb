@@ -1,12 +1,17 @@
-<h1> To do list </h1>
+<h1> Lista de Tarefas </h1>
 <p> Bem-vindo ao maior lista de tarefas online </p>
 
-<h3> Tarefas </h3>
 <ul>
   <% @task.each do |task| %>
     <li><%= task.title %></li>
-    <li><%= task.description %></li>
   <% end %>
 </ul>
 
-<%= link_to 'lista de tarefas', task_list_index_path %>
+
+<% if user_signed_in? %>
+  <%= link_to 'Criar nova lista', new_task_list_path %>
+  <%= link_to 'Sair',  destroy_user_session_path, method: :delete %>
+<% else %>
+  <%= link_to 'log in', new_user_session_path %>
+  <%= link_to 'Sign up', new_user_registration_path %>
+<% end %>
