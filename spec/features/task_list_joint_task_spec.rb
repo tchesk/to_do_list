@@ -4,8 +4,12 @@ feature 'user create a task list' do
   scenario 'and access a specific task' do
     user = User.create(email:'pedro@autoseg.com', password:'123456')
 
-    task_list = TaskList.create(title:'Cuidar da horta', public_list: true)
-    task_list_1 = TaskList.create(title:'Treinar futvolei', public_list: false)
+    task_list = TaskList.create(title:'Cuidar da horta', public_list: true,
+                                user: user
+    )
+    task_list_1 = TaskList.create(title:'Treinar futvolei', public_list: false,
+                                  user: user
+    )
 
     task = Task.create(title: 'regar as plantas',
                        description: 'horta comunitária', task_list: task_list

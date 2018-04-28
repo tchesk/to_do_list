@@ -19,7 +19,7 @@ feature 'user visit home page' do
 
   scenario 'and view a public list' do
     user = User.create(email:'pedro@autoseg.com', password:'123456')
-    task_list = TaskList.create(title:'Cuidar da horta', public_list: true)
+    task_list = TaskList.create(title:'Cuidar da horta', public_list: true, user: user)
     list = Task.create(title: 'regar as plantas',
                        description:'horta comunitária', task_list: task_list
     )
