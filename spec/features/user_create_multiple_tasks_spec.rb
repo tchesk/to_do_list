@@ -27,11 +27,8 @@ feature 'create a task list ' do
     fill_in 'Senha', with: '123456'
     click_on 'Entrar'
 
-    visit task_lists_path
-
-    expect(page).to have_css('h1', text: 'Tarefas')
-    expect(page).to have_css('h3', text: task_list.title)
-    expect(page).to have_css('h4', text: task.title)
-    expect(page).to have_css('li', text: task.description)
+    expect(page).to have_content('Logado com sucesso')
+    expect(page).to have_css('li', text: task_list.title)
+    expect(page).to have_css('li', text: task_list_1.title)
   end
 end

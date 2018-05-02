@@ -27,6 +27,5 @@ feature 'user create a task list' do
     visit task_lists_path
 
     expect(page).to have_css('h3', text: task_list.title)
-
   end
 end

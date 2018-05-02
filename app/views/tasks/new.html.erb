@@ -1,0 +1,13 @@
+<%= form_for(@list) do |task| %>
+  <div>
+  <%= task.label :title, 'Título' %>
+  <%= task.text_field :title %>
+  </div>
+  <div>
+    <%= task.label :description, 'Comentário' %>
+    <%= task.text_field :description %>
+  </div>
+  <div>
+    <%= task.submit 'Salvar' %>
+  </div>
+<% end %>

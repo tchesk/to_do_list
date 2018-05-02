@@ -3,7 +3,7 @@
     <% if list.public_list %>
         <h3><%= list.title %></h3>
       <% @list.tasks.each do |task| %>
-        <h4><%= task.title %></h4>
+        <h4><%= link_to task.title %></h4>
         <ul>
             <li><%= task.description %></li>
         </ul>

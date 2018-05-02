@@ -1,16 +1,23 @@
 <h1> Lista de Tarefas </h1>
-<p> Bem-vindo ao maior lista de tarefas online </p>
-
-<ul>
-  <% @task.each do |task| %>
-    <li><%= task.title %></li>
-  <% end %>
-</ul>
-
+<p> Bem-vindo a maior lista de tarefas online </p>
 
 <% if user_signed_in? %>
-  <%= link_to 'Criar nova lista', new_task_list_path %>
-  <%= link_to 'Sair',  destroy_user_session_path, method: :delete %>
+
+  <% @task.each do |list| %>
+    <ul>
+    <li><%= link_to list.title, task_list_tasks_path(list.id) %></li>
+    </ul>
+  <% end %>
+
+  </div>
+  <div>
+    <%= link_to 'Criar nova lista', new_task_list_path %>
+  </div>
+
+  <div>
+    <%= link_to 'Sair',  destroy_user_session_path, method: :delete %>
+  </div>
+
 <% else %>
   <%= link_to 'log in', new_user_session_path %>
   <%= link_to 'Sign up', new_user_registration_path %>

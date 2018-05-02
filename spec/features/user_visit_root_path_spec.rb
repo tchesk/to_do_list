@@ -14,7 +14,7 @@ feature 'user visit home page' do
     click_on 'Entrar'
 
     expect(page).to have_css('h1', text: 'Lista de Tarefas')
-    expect(page).to have_css('p', text: 'Bem-vindo ao maior lista de tarefas online')
+    expect(page).to have_css('p', text: 'Bem-vindo a maior lista de tarefas online')
   end
 
   scenario 'and view a public list' do
