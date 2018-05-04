@@ -23,9 +23,9 @@ feature 'create a new task' do
     expect(page).to have_css('h3', text: 'Regar plantas')
     expect(page).to have_css('h4', text: 'horta comunitária')
     expect(page).to have_link('Adicionar nova tarefa')
-    expect(page).to have_link('Lista de tarefas')
-    expect(page).to have_link('Sair')
+    expect(page).to have_link('Ver todas as listas')
   end
+
   scenario 'login and click on task list' do
     user = User.create(email: 'pedro@autoseg.com.br', password:'123456')
     task_list = TaskList.create(title: 'Cuidar da horta', public_list: true,
@@ -38,18 +38,16 @@ feature 'create a new task' do
     visit root_path
 
     click_on 'log in'
-    fill_in 'Email', with:'pedro@autoseg.com'
+    fill_in 'Email', with:'pedro@autoseg.com.br'
     fill_in 'Senha', with: '123456'
     click_on 'Entrar'
 
     click_on task_list.title
-    click_on task.title
 
-    expect(page).to have_css('h3', text: task_list.title)
-    expect(page).to have_css('h2', text: task.title)
-    expect(page).to have_css('h1', text: task.description)
+    expect(page).to have_css('h3', text: task.title)
+    expect(page).to have_css('h4', text: task.description)
     expect(page).to have_link('Home')
-    expect(page).to have_link('Lista de tarefas')
+    expect(page).to have_link('Ver todas as listas')
     expect(page).to have_link('Sair')
   end
 end

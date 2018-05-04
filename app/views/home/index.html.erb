@@ -1,11 +1,11 @@
-<h1> Lista de Tarefas </h1>
+<h1> Lista de Tarefas Pública </h1>
 <p> Bem-vindo a maior lista de tarefas online </p>
 
 <% if user_signed_in? %>
 
   <% @task.each do |list| %>
     <ul>
-    <li><%= link_to list.title, task_list_tasks_path(list.id) %></li>
+    <li><%= link_to list.title, task_list_path(list.id) %></li>
     </ul>
   <% end %>
 

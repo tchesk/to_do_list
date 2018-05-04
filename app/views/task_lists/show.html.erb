@@ -1,0 +1,21 @@
+<h1> Lista de Tarefas Pública </h1>
+<% @task_list.tasks.each do |task| %>
+  <h3><%= task.title %></h3>
+  <h4><%= task.description %></h4>
+<% end %>
+
+<div>
+  <%= link_to 'Ver todas as listas',root_path %>
+</div>
+
+<div>
+  <%= link_to 'Home', root_path %>
+</div>
+
+<div>
+<%= link_to 'Sair',  destroy_user_session_path, method: :delete %>
+</div>
+
+<% if @task_list.user == current_user %>
+  <%= link_to 'Adicionar nova tarefa', new_task_list_task_path(@task_list) %>
+<% end %>

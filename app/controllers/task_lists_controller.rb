@@ -5,18 +5,18 @@ class TaskListsController < ApplicationController
   end
 
   def show
-    @list = TaskList.find_by(params[:id])
+    @task_list = TaskList.find(params[:id])
   end
 
   def new
-    @lists = TaskList.new
+    @list = TaskList.new
   end
 
   def create
     @tasklist = TaskList.new task_list_params
     @tasklist.user = current_user
     if @tasklist.save
-      redirect_to task_list_path(@tasklist)
+      redirect_to root_path
     else
       flash[:error] = 'Campo título e obrigatório!'
       render :new

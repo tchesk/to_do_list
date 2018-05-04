@@ -1,13 +1,12 @@
-<%= form_for(@list) do |task| %>
+<%= form_for([@task_list, @task]) do |f| %>
   <div>
-  <%= task.label :title, 'Título' %>
-  <%= task.text_field :title %>
+  <%= f.label :title, 'Título' %>
+  <%= f.text_field :title %>
   </div>
   <div>
-    <%= task.label :description, 'Comentário' %>
-    <%= task.text_field :description %>
-  </div>
+  <%= f.label :description, 'Comentário' %>
+  <%= f.text_field :description %>
   <div>
-    <%= task.submit 'Salvar' %>
   </div>
+  <%= f.submit 'Salvar' %>
 <% end %>
